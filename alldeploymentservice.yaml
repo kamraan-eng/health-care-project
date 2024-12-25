@@ -1,0 +1,8 @@
+deploy:
+  stage: deploy
+  script:
+    - kubectl apply -f healthcare-deployment1.yaml
+    - kubectl apply -f healthcare-deployment12.yaml
+    - kubectl apply -f healthcare-deployment3.yaml
+  only:
+    - master
