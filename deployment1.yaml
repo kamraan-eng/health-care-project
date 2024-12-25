@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
-  name: healthcare-deployment
+  name: healthcare-deployment1
 spec:
   selector:
     matchLabels:
       app: spring-boot-k8s
-  replicas: 3 # Number of replicas that will be created for this deployment
+  replicas: 1 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
@@ -29,22 +29,6 @@ metadata: # Metadata of the resource kind we are creating
 spec:
   selector:
     app: addresbook
-  ports:
-    - protocol: "TCP"
-      port: 8082 # The port that the service is running on in the cluster
-      targetPort: 8082 # The port exposed by the service
-  type: NodePort # type of the service.
-spec:
-  selector:
-    app: addresbook2
-  ports:
-    - protocol: "TCP"
-      port: 8082 # The port that the service is running on in the cluster
-      targetPort: 8082 # The port exposed by the service
-  type: NodePort # type of the service.
-  spec:
-  selector:
-    app: addresbook3
   ports:
     - protocol: "TCP"
       port: 8082 # The port that the service is running on in the cluster
