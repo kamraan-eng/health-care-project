@@ -49,8 +49,5 @@ pipeline{
             steps{
                 script{
                     kubernetesDeploy (configs: 'alldeploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
-                sh'kubectl apply -f deployment1.yaml '
-                sh'kubectl apply -f deployment2.yaml 
-                sh'kubectl apply -f deployment3.yaml 
         }
     }
